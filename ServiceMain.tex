@@ -1,0 +1,125 @@
+\documentclass[11pt]{book}
+\usepackage[margin=1in]{geometry}
+\usepackage{setspace}
+\usepackage{lmodern}
+\usepackage{parskip}
+\usepackage{titlesec}
+\usepackage{titling}
+\usepackage{graphicx}
+\usepackage{etoolbox}
+\usepackage{fancyhdr}
+\setlength{\headheight}{15pt}
+\addtolength{\topmargin}{-3pt}
+
+% Header/Footer style
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[LE,RO]{\thepage}
+\fancyhead[RE]{\leftmark}
+\fancyhead[LO]{\rightmark}
+
+
+% Book title and author
+\title{Songs of a Sourdough}
+\author{Robert W. Service}
+
+
+% Prevent chapter headings from adding "Chapter" prefix
+\titleformat{\chapter}[display]
+  {\normalfont\LARGE\bfseries\centering}{}{0pt}{}
+
+% Begin Document
+\begin{document}
+
+% Title Page
+\begin{titlepage}
+    \centering
+    {\Huge\bfseries Songs of a Sourdough\par}
+    \vspace{2cm}
+    {\Large Robert W. Service\par}
+    \vfill
+    {\large Modernized edition by Arthur Strutzenberg, 2025\par}
+    \vspace{1cm}    {\large Originally Published by William Briggs, Toronto\par}
+    {\large 1907}
+\end{titlepage}
+
+\frontmatter
+\tableofcontents
+\newpage
+
+\mainmatter
+
+\newcommand{\poemchapter}[1]{
+  \def\poemtitle{#1}
+  \section*{\poemtitle}
+  \markboth{\poemtitle}{\poemtitle}
+  \addcontentsline{toc}{chapter}{\poemtitle}
+}
+
+\input{poems/law_yukon}
+\newpage
+\input{poems/parsons_son}
+\newpage
+\input{poems/the_spell_of_the_yukon}
+\newpage
+\input{poems/the_call_of_the_wild}
+\newpage
+\input{poems/the_lone_trail}
+\newpage
+\input{poems/the_heart_of_the_sourdough}
+\newpage
+\input{poems/the_three_voices}
+\newpage
+\input{poems/the_pines}
+\newpage
+\input{poems/the_harpy}
+\newpage
+\input{poems/the_lure_of_little_voices}
+\newpage
+\input{poems/the_song_of_the_wage_slave}
+\newpage
+\input{poems/grin}
+\newpage
+\input{poems/the_shooting_of_dan_mcgrew}
+\newpage
+\input{poems/cremation_mcgee}
+\newpage
+\input{poems/my_madonna}
+\newpage
+\input{poems/unforgotten}
+\newpage
+\input{poems/the_reckoning}
+\newpage
+\input{poems/quatrains}
+\newpage
+\input{poems/the_men_that_dont_fit_in}
+\newpage
+\input{poems/music_in_the_bush}
+\newpage
+\input{poems/the_rhyme_of_the_remittance_man}
+\newpage
+\input{poems/the_lowdown_white}
+\newpage
+\input{poems/the_little_old_log_cabin}
+\newpage
+\input{poems/the_younger_son}
+\newpage
+\input{poems/the_march_of_the_dead}
+\newpage
+\input{poems/fighting_mac}
+\newpage
+\input{poems/the_woman_and_the_angel}
+\newpage
+\input{poems/the_rhyme_of_the_restless_son}
+\newpage
+\input{poems/new_years_eve}
+\newpage
+\input{poems/comfort}
+\newpage
+\input{poems/premonition}
+\newpage
+\input{poems/the_tramps}
+\newpage
+\input{poems/lenvoi}
+\newpage
+\end{document}
