@@ -2,11 +2,11 @@
 \usepackage[
   paperwidth=5.5in,
   paperheight=8.5in,
-  inner=0.5in,     % Margin on the binding side
-  outer=0.75in,    % Margin on the outside edge
+  inner=0.5in, % Margin on the binding side
+  outer=0.75in,% Margin on the outside edge
   top=.75in,
   bottom=.75in,
-  twoside          % Enables mirroring of inner/outer margins
+  twoside  % Enables mirroring of inner/outer margins
 ]{geometry}
 \usepackage{setspace}
 \usepackage{lmodern}
@@ -39,19 +39,19 @@
 %usage:  \indentedblock\itshape{}
 \newcommand{\indentedblock}[2]{
   \begin{adjustwidth}{2em}{0pt}
-    {\setlength{\parindent}{0pt}
-     #1 % styling command like \itshape
-     #2 % the actual content
-    }
+{\setlength{\parindent}{0pt}
+ #1 % styling command like \itshape
+ #2 % the actual content
+}
   \end{adjustwidth}
 }
 
 %MACRO FOR INDENTED BLOCK WITH NO SECOND SHAPING
 \newcommand{\indentedblockns}[1]{
   \begin{adjustwidth}{2em}{0pt}
-    {\setlength{\parindent}{0pt}
-     #1 
-    }
+{\setlength{\parindent}{0pt}
+ #1 
+}
   \end{adjustwidth}%
 }
 
@@ -74,17 +74,17 @@
 
 % Title Page
 \begin{titlepage}
-    \centering
-    {\Huge\bfseries Ballads of A Cheechako\par}
-    {\Huge\bfseries \&\par}
-    {\Huge\bfseries Songs of a Sourdough\par}
-    \vspace{2cm}
+\centering
+{\Huge\bfseries Ballads of A Cheechako\par}
+{\Huge\bfseries \&\par}
+{\Huge\bfseries Songs of a Sourdough\par}
+\vspace{2cm}
 
-    {\Large Robert W. Service\par}
-    \vfill
-    {\large Modernized edition by Arthur Strutzenberg, 2025\par}
-    \vspace{1cm}    {\large Originally Published by William Briggs, Toronto\par}
-    {\large 1907 and 1909}
+{\Large Robert W. Service\par}
+\vfill
+{\large Modernized edition by Arthur Strutzenberg, 2025\par}
+\vspace{1cm}{\large Originally Published by William Briggs, Toronto\par}
+{\large 1907 and 1909}
 \end{titlepage}
 
 \frontmatter
