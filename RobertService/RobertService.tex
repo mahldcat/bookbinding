@@ -20,8 +20,11 @@
 \usepackage{calc}
 \usepackage{changepage} % in preamble
 \usepackage{verse}
+\usepackage{adjustbox}
 
 \newcommand{\idt}{\hspace*{1em}}
+
+\newenvironment{poemblock}{}{}
 
 %MACRO FOR POEM CHAPTER 
 \newcommand{\poemchapter}[1]{
@@ -50,8 +53,6 @@
     }
   \end{adjustwidth}%
 }
-
-
 
 \setlength{\headheight}{15pt}
 \addtolength{\topmargin}{-3pt}
@@ -94,10 +95,10 @@
 
 \mainmatter
 
-\newlength{\poemindent}
+%\newlength{\poemindent}
 
 % Actual Poems
-\input{poems/SongsOfASourdough/law_yukon}
+\input{poems/SongsOfASourdough/the_law_of_the_yukon}
 \newpage
 \input{poems/SongsOfASourdough/parsons_son}
 \newpage
