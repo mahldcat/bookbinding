@@ -1,0 +1,50 @@
+
+\usepackage{multicol}
+
+% PAGE SETUP
+\setstocksize{8.5in}{5.5in}
+\settrimmedsize{8.5in}{5.5in}{*}
+\settypeblocksize{6.75in}{4.5in}{*}
+\setlrmarginsandblock{0.75in}{0.5in}{*}
+\setulmarginsandblock{0.75in}{1.0in}{*}
+\checkandfixthelayout
+
+% FONT SETUP
+\usepackage{fontspec}
+\setmainfont{EB Garamond}[
+  UprightFont      = *-Regular,
+  ItalicFont       = *-Italic,
+  BoldFont         = *-Bold,
+  BoldItalicFont   = *-Bold\space Italic
+]
+
+
+% STYLING
+\usepackage{parskip}
+\usepackage{titlesec}
+\titleformat{\section}{\large\scshape\centering}{}{0pt}{}
+\titlespacing*{\section}{0pt}{1em}{0.5em}
+
+% HEADERS/FOOTERS
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\fancyhf{}
+\fancyfoot[LE]{\thepage}  % Left footer on Even pages
+\fancyfoot[RO]{\thepage}  % Right footer on Odd pages
+\fancyhead[LE]{\leftmark}  % Left header on Even pages
+\fancyhead[RO]{}           % Empty right header
+
+
+% LINKS
+\usepackage{hyperref}
+\usepackage{adjustbox}
+\hypersetup{
+  colorlinks=true,
+  linkcolor=blue,
+  urlcolor=blue,
+  pdftitle={The New Testament of the King James Bible},
+  pdfauthor={Your Name}
+}
+
+% Verse formatting
+\newcommand{\verseref}[2]{\textsuperscript{#2}}

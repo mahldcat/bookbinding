@@ -17,6 +17,42 @@
 \usepackage{etoolbox}
 \usepackage{fancyhdr}
 \usepackage{ebgaramond}
+\usepackage{calc}
+\usepackage{changepage} % in preamble
+\usepackage{verse}
+
+\newcommand{\idt}{\hspace*{1em}}
+
+%MACRO FOR POEM CHAPTER 
+\newcommand{\poemchapter}[1]{
+  \def\poemtitle{#1}
+  \section*{\poemtitle}
+  \markboth{\poemtitle}{\poemtitle}
+  \addcontentsline{toc}{chapter}{\poemtitle}
+}
+
+%MACRO FOR INDENTED BLOCK:
+%usage:  \indentedblock\itshape{}
+\newcommand{\indentedblock}[2]{
+  \begin{adjustwidth}{2em}{0pt}
+    {\setlength{\parindent}{0pt}
+     #1 % styling command like \itshape
+     #2 % the actual content
+    }
+  \end{adjustwidth}
+}
+
+%MACRO FOR INDENTED BLOCK WITH NO SECOND SHAPING
+\newcommand{\indentedblockns}[1]{
+  \begin{adjustwidth}{2em}{0pt}
+    {\setlength{\parindent}{0pt}
+     #1 
+    }
+  \end{adjustwidth}%
+}
+
+
+
 \setlength{\headheight}{15pt}
 \addtolength{\topmargin}{-3pt}
 
@@ -58,13 +94,9 @@
 
 \mainmatter
 
-\newcommand{\poemchapter}[1]{
-  \def\poemtitle{#1}
-  \section*{\poemtitle}
-  \markboth{\poemtitle}{\poemtitle}
-  \addcontentsline{toc}{chapter}{\poemtitle}
-}
+\newlength{\poemindent}
 
+% Actual Poems
 \input{poems/SongsOfASourdough/law_yukon}
 \newpage
 \input{poems/SongsOfASourdough/parsons_son}
