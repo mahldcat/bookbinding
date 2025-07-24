@@ -65,12 +65,6 @@
 \fancyhead[RE]{\leftmark}
 \fancyhead[LO]{\rightmark}
 
-
-% Book title and author
-\title{Songs of a Sourdough}
-\author{Robert W. Service}
-
-
 % Prevent chapter headings from adding "Chapter" prefix
 \titleformat{\chapter}[display]
   {\normalfont\LARGE\bfseries\centering}{}{0pt}{}
@@ -99,16 +93,21 @@
 
 \mainmatter
 
-%\newlength{\poemindent}
+\cleardoublepage
+\chapter*{Foreword}
+\addcontentsline{toc}{chapter}{Foreword}
+\markboth{Foreword}{Foreword}
+\input{foreward}
+
 
 % Actual Poems
-\chapter*{Ballads of A Cheechako}
 \cleardoublepage
+\chapter*{Ballads of A Cheechako}
 \addcontentsline{toc}{chapter}{Ballads of a Cheechako}
 \input{poems/cheechako}
 
-\chapter*{Songs of a Sourdough}
 \cleardoublepage
+\chapter*{Songs of a Sourdough}
 \addcontentsline{toc}{chapter}{Songs of a Sourdough}
 \input{poems/songsofasourdough}
 
