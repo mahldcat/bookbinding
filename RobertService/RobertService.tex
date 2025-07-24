@@ -27,12 +27,13 @@
 \newenvironment{poemblock}{}{}
 
 %MACRO FOR POEM CHAPTER 
-\newcommand{\poemchapter}[1]{
+\newcommand{\poemchapter}[1]{%
   \def\poemtitle{#1}
   \section*{\poemtitle}
   \markboth{\poemtitle}{\poemtitle}
-  \addcontentsline{toc}{chapter}{\poemtitle}
+  \addcontentsline{toc}{section}{\poemtitle}
 }
+
 
 %MACRO FOR INDENTED BLOCK:
 %usage:  \indentedblock\itshape{}
@@ -80,13 +81,16 @@
 % Title Page
 \begin{titlepage}
     \centering
+    {\Huge\bfseries Ballads of A Cheechako\par}
+    {\Huge\bfseries \&\par}
     {\Huge\bfseries Songs of a Sourdough\par}
     \vspace{2cm}
+
     {\Large Robert W. Service\par}
     \vfill
     {\large Modernized edition by Arthur Strutzenberg, 2025\par}
     \vspace{1cm}    {\large Originally Published by William Briggs, Toronto\par}
-    {\large 1907}
+    {\large 1907 and 1909}
 \end{titlepage}
 
 \frontmatter
@@ -98,5 +102,14 @@
 %\newlength{\poemindent}
 
 % Actual Poems
+\chapter*{Ballads of A Cheechako}
+\cleardoublepage
+\addcontentsline{toc}{chapter}{Ballads of a Cheechako}
+\input{poems/cheechako}
+
+\chapter*{Songs of a Sourdough}
+\cleardoublepage
+\addcontentsline{toc}{chapter}{Songs of a Sourdough}
 \input{poems/songsofasourdough}
+
 \end{document}
