@@ -18,7 +18,7 @@ Imposer settings: {
   "topEdgePaddingPt": 0,
   "bottomEdgePaddingPt": 0,
   "sigFormat": "standardsig",
-  "sigLength": 3,
+  "sigLength": 5,
   "customSigLength": [
     0
   ],
@@ -34,4 +34,4 @@ Imposer settings: {
   "paperSizeCustomHeight": 0
 }
 
-Link to the imposer with these settings: https://momijizukamori.github.io/bookbinder-js/?paperSize=LETTER&paperSizeUnit=in&sigOrderMarks=true&pageScaling=centered&pagePositioning=binding_aligned&customSigLength=0&sigLength=3&flyleafs=2
+Link to the imposer with these settings: https://momijizukamori.github.io/bookbinder-js/?paperSize=LETTER&paperSizeUnit=in&sigOrderMarks=true&pageScaling=centered&pagePositioning=binding_aligned&customSigLength=0&flyleafs=2&sigLength=5

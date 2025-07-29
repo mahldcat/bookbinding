@@ -13,20 +13,6 @@
 % Dedication
 \cleardoublepage
 \thispagestyle{empty}
-\begin{flushleft}
-  \vspace*{\fill}
-  {\Large\textbf{Foreword}}\\[1em]
-  The story of Jesus Christ has shaped my life in ways both quiet and profound. His words, His love, and His sacrifice continue to be a source of strength, hope, and peace to me every day. It is through His life, told here in the New Testament, that I have come to know what it truly means to be loved and redeemed.\\
-  \medskip
-  As Christmas approached, I wanted to give you something more meaningful than anything found on a shelf. Something that would reflect not only the season, but the heart of it—Christ Himself. This book, hand-prepared, holds the story of His birth, His life, His death, and His resurrection. It is the beginning of the greatest hope we’ve ever known.\\
-  \medskip
-  My prayer is that this gift is a blessing to you both—a reminder of the joy we share in Christ, the peace that anchors us, and the beauty of His Word in every season. May it encourage you, comfort you, and draw you ever closer to Him who gave us the greatest gift of all.
-  \medskip
-  Merry Christmas\\
-  Arthur
-  \vspace*{\fill}
-\end{flushleft}
-\newpage
 
 
 \cleardoublepage
@@ -42,10 +28,23 @@
 
 %TOC
 \cleardoublepage
+\pagenumbering{roman}
+\setcounter{page}{1}
 \renewcommand{\contentsname}{} % prevent memoir from inserting its own title
 \chapter*{\vspace*{-3em}\centering\Huge Contents\vspace{-1em}}
-\vspace*{-2em} % tighten gap between title and ToC body
+\vspace*{-4em} % tighten gap between title and ToC body
 \tableofcontents*
+\newpage
+
+\cleardoublepage
+\pagenumbering{arabic}
+\setcounter{page}{1}
+
+\cleardoublepage
+\chapter*{Foreword}
+\addcontentsline{toc}{chapter}{Foreword}
+\markboth{Foreword}{Foreword}
+\input{imports/foreward}
 
 \twocolumn
 \tolerance=1000
