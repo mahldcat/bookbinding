@@ -1,0 +1,37 @@
+Imposer settings: {
+  "printFile": "both",
+  "sourceRotation": "none",
+  "rotatePage": false,
+  "paperSize": "LETTER",
+  "paperSizeUnit": "in",
+  "printerType": "duplex",
+  "paperRotation90": false,
+  "pageLayout": "folio",
+  "cropMarks": false,
+  "cutMarks": false,
+  "pdfEdgeMarks": false,
+  "sigOrderMarks": true,
+  "pageScaling": "centered",
+  "pagePositioning": "binding_aligned",
+  "mainForeEdgePaddingPt": 0,
+  "bindingEdgePaddingPt": 0,
+  "topEdgePaddingPt": 0,
+  "bottomEdgePaddingPt": 0,
+  "sigFormat": "standardsig",
+  "sigLength": 4,
+  "customSigLength": [
+    0
+  ],
+  "foreEdgePaddingPt": 0,
+  "wackySpacing": "wacky_pack",
+  "flyleafs": 2,
+  "sewingMarksEnabled": true,
+  "sewingMarkLocation": "all",
+  "sewingMarksMarginPt": 72,
+  "sewingMarksAmount": 3,
+  "sewingMarksTapeWidthPt": 18,
+  "paperSizeCustomWidth": 0,
+  "paperSizeCustomHeight": 0
+}
+
+Link to the imposer with these settings: https://momijizukamori.github.io/bookbinder-js/?paperSize=LETTER&paperSizeUnit=in&sigOrderMarks=true&pageScaling=centered&pagePositioning=binding_aligned&customSigLength=0&flyleafs=2&sewingMarksEnabled=true&sewingMarksTapeWidthPt=18
