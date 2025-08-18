@@ -1,0 +1,43 @@
+% !TeX program = xelatex
+\documentclass[11pt,twoside]{book} % twoside = opposing margins
+
+\usepackage{fontspec}
+\setmainfont{EB Garamond}
+
+\usepackage[
+  paperwidth=5.5in, paperheight=8.5in,
+  top=0.75in, bottom=0.95in,
+  inner=1.0in, outer=0.7in % opposing margins for binding
+]{geometry}
+
+\usepackage{setspace}
+\setstretch{1.25}
+\usepackage{microtype}
+
+\usepackage{fancyhdr}
+\setlength{\headheight}{14pt}
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[LE,RO]{\thepage} % page numbers: Left Even, Right Odd
+\fancyhead[RE]{\leftmark}   % chapter title on even pages
+\fancyhead[LO]{\rightmark}  % section title on odd pages
+
+\begin{document}
+
+\frontmatter
+\chapter*{Preface}
+This is where your preface or foreword would go.
+
+\tableofcontents
+
+\mainmatter
+
+\include{Chapters/chapter001}
+
+\include{Chapters/chapter002}
+
+\backmatter
+\chapter*{Afterword TITLE}
+Closing notes or appendix material.
+
+\end{document}
