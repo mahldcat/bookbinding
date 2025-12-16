@@ -1,0 +1,67 @@
+\documentclass[12pt]{book}
+
+% Fonts
+\usepackage{fontspec}
+\setmainfont{UnifrakturCook}
+%\newfontfamily\initfamily{UnifrakturCook}[Scale=MatchUppercase]
+\newfontfamily\initfamily{Goudy Initialen} % Ornate drop cap font
+
+% Graphics + ornaments
+\usepackage{tikz}
+\usetikzlibrary{positioning} % <-- needed for “left=… of …”
+\usepackage{pgfornament}
+
+% Title formatting + drop cap
+\usepackage{titlesec}
+\usepackage{lettrine}
+\usepackage{microtype}
+
+% use the ornate initials font for the drop cap
+\renewcommand{\LettrineFontHook}{\initfamily}
+
+% Chapter banner
+\newcommand{\ChapterBanner}{%
+  \begin{center}
+    \begin{tikzpicture}
+      \node[inner sep=6pt, minimum width=.7\linewidth,
+            draw, rounded corners=2pt, line width=0.8pt] (box)
+            {\scshape\Large Chapter \thechapter};
+      \node[left=6pt of box.west] (L) {\pgfornament[width=1.9cm]{61}};
+      \node[right=6pt of box.east] (R) {\pgfornament[width=1.9cm,symmetry=v]{61}};
+      \draw (L.west) -- ++(-7mm,0);
+      \draw (R.east) -- ++(7mm,0);
+    \end{tikzpicture}
+  \end{center}%
+}
+
+\titleformat{\chapter}[block]{\filcenter}{}{0pt}{\ChapterBanner}
+\titlespacing*{\chapter}{0pt}{3em}{2em}
+
+\setlength{\DefaultNindent}{0pt}
+\setlength{\DefaultFindent}{0.5em}
+
+\begin{document}
+
+\chapter{Jonathan Harker's Journal}
+\begin{center}\itshape (Kept in shorthand.)\end{center}
+\hfill\textsc{3 May.\ Bistritz.—}
+
+\lettrine[lines=3,lhang=0.05,loversize=0.15]{L}{EFT MUNICH AT} 8:35 P.\,M., on 1st May, arriving at Vienna early
+next morning; should have arrived at 6:46, but train was an hour late. Buda-Pesth seems a wonderful place, \dots
+
+
+\chapter{Jonathan Harker's Journal--continued}
+\hfill\textsc{5 May.—}
+
+\lettrine[lines=3,lhang=0.05,loversize=0.15]{I}{ MUST HAVE BEEN ASLEEP}, for certainly if I had been fully awake I must have noticed the approach of a such a remarkable place.\dots
+
+%
+%\lettrine[lines=3,lhang=0.05,loversize=0.15]{M}{unich} Munich at 8:35 P.\,M., on 1st May,\dots
+
+%\lettrine[lines=3,lhang=0.05,loversize=0.15]{V}{ienna} blah blah blah \dots
+
+%\lettrine[lines=3,lhang=0.05,loversize=0.15]{B}{uda-Pesth} blah blah blah \dots
+
+
+\end{document}
+

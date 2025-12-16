@@ -1,0 +1,13 @@
+% Save your ruled file as college-ruled.pdf (5.5"x8.5").
+% Then use this tiny imposition wrapper:
+\documentclass{article}
+\usepackage[letterpaper,landscape,margin=0in]{geometry}
+\usepackage{pdfpages}
+
+\begin{document}
+\includepdf[
+  pages={1,1,1,1},  % two on front, two on back (identical)
+  nup=2x1,          % 2 across, 1 down (fits half-letter on letter)
+  frame=false
+]{college_rule.pdf}
+\end{document}

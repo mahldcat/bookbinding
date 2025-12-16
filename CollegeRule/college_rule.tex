@@ -1,0 +1,57 @@
+\documentclass[12pt]{article}
+
+% Half-letter page
+\usepackage[paperwidth=5.5in,paperheight=8.5in,margin=0.25in]{geometry}
+
+% Drawing + robust shipout hook
+\usepackage{tikz}
+\usepackage{tikzpagenodes}
+\usepackage{eso-pic}
+\usetikzlibrary{calc}
+\usepackage{xcolor}
+
+% ---- Configurable parameters ----
+\newlength\CollegeRuleSpacing
+\setlength\CollegeRuleSpacing{0.28125in}  % 9/32" college rule
+\newlength\TopGap      \setlength\TopGap{0.75in}
+\newlength\BottomGap   \setlength\BottomGap{0.35in}
+\newlength\MarginRuleX \setlength\MarginRuleX{1in} % from outer edge
+
+\newcommand*\RuleThickness{0.3pt}
+\newcommand*\MarginThickness{0.5pt}
+\definecolor{rulegray}{RGB}{140,140,140}
+\definecolor{marginred}{RGB}{200,35,35}
+
+% ---- Background drawing ----
+\newcommand{\DrawCollegeRule}{%
+  \begin{tikzpicture}[remember picture,overlay]
+    \clip (current page.north west) rectangle (current page.south east);
+
+    % Horizontal rules
+    \foreach \i in {0,...,40} {
+      \draw[rulegray, line width=\RuleThickness]
+        ([yshift=-\TopGap - \i*\CollegeRuleSpacing]current page.north west) --
+        ([yshift=-\TopGap - \i*\CollegeRuleSpacing]current page.north east);
+    }
+
+    % Red margin on outer edge (left on odd pages, right on even)
+% Red margin on outer edge (left on odd pages, right on even)
+\ifodd\value{page}
+  \draw[marginred, line width=\MarginThickness]
+    ([xshift=\MarginRuleX,yshift=-\TopGap]current page.north west) --
+    ([xshift=\MarginRuleX]current page.south west);
+\else
+  \draw[marginred, line width=\MarginThickness]
+    ([xshift=-\MarginRuleX,yshift=-\TopGap]current page.north east) --
+    ([xshift=-\MarginRuleX]current page.south east);
+\fi
+
+  \end{tikzpicture}%
+}
+\AddToShipoutPictureBG*{\DrawCollegeRule}
+
+\pagestyle{empty}
+
+\begin{document}
+\null  % exactly one page; no \newpage at the end
+\end{document}

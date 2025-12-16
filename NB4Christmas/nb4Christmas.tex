@@ -1,0 +1,235 @@
+% 'Twas the Night Before Christmas (A Visit from St. Nicholas)
+% 3" x 4" pamphlet, stanza-per-page layout
+% Public domain text by Clement Clarke Moore (1823)
+
+\documentclass[10pt]{article}
+
+% --- Page setup for 3.5in x 4in trim ---
+\usepackage[paperwidth=3.5in,paperheight=4in,margin=0.25in]{geometry}
+\usepackage{fontspec} % only works with XeLaTeX or LuaLaTeX
+\setmainfont{EB Garamond} % or another installed font you like
+
+\usepackage{microtype}
+\usepackage{titling}
+\usepackage{setspace}
+\usepackage{ragged2e}
+\usepackage{fancyhdr}
+\usepackage{ifthen}
+\usepackage{xcolor}
+\usepackage{graphicx}   % for \includegraphics
+
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{0pt}
+\linespread{1.05}
+
+% --- Simple header/footer (title in header) ---
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[C]{\footnotesize \textsc{A Visit from St. Nicholas}}
+\fancyfoot[C]{\footnotesize\thepage}
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\footrulewidth}{0pt}
+
+
+\definecolor{Stanza1Color}{HTML}{FBF7F1}
+
+
+% #1 = optional image filename (omit [] if none)
+% #2 = optional 
+% #3 = stanza text
+% #4 = position: top / middle / bottom
+\newcommand{\stanza}[3][]{%
+  \clearpage
+  \nopagecolor
+  
+  \ifthenelse{\equal{#3}{top}}{%
+    % --- top placement ---
+    \ifx\\#1\\%
+      % no image
+    \else
+      \begin{center}\includegraphics[width=0.9\linewidth]{#1}\end{center}%
+    \fi
+    \begin{center}#2\end{center}%
+  }{%
+    \ifthenelse{\equal{#3}{bottom}}{%
+      % --- bottom placement ---
+      \begin{center}#2\end{center}%
+      \ifx\\#1\\%
+        % no image
+      \else
+        \vfill
+        \begin{center}\includegraphics[width=0.9\linewidth]{#1}\end{center}%
+      \fi
+    }{%
+      % --- middle placement (default) ---
+      \vspace*{\fill}%
+      \begin{center}#2\end{center}%
+      \vspace*{\fill}%
+      \ifx\\#1\\%
+        % no image
+      \else
+        \begin{center}\includegraphics[width=0.9\linewidth]{#1}\end{center}%
+      \fi
+    }%
+  }%
+}
+
+
+\begin{document}
+
+\clearpage
+\thispagestyle{empty}
+\mbox{}
+\newpage
+
+
+\thispagestyle{empty}
+\vspace*{\fill}
+\begin{center}
+   \\ 
+\end{center}
+
+\vspace*{\fill}
+\newpage
+
+
+
+% --- Title page ---
+\thispagestyle{empty}
+\vspace*{\fill}
+\begin{center}
+  {\Large\bfseries A Visit from St.~Nicholas}\\[4pt]
+  {\small (\emph{'Twas the Night Before Christmas})}\\[8pt]
+  {\small Clement Clarke Moore, 1823}
+\end{center}
+\vspace*{\fill}
+\newpage
+
+% --- Optional blank verso after title (remove if you want fewer pages) ---
+\thispagestyle{empty}\mbox{}\newpage
+
+% --- Poem: quatrain-per-page (common presentation) ---
+\stanza[images/Stanza1.png]{''Twas the night before Christmas,\\
+when all through the house\\
+Not a creature was stirring,
+not even a mouse;\\
+The stockings were hung\\
+by the chimney with care,\\
+In hopes that St.~Nicholas\\
+soon would be there;}{top}
+
+%Stanza2
+\stanza{The children were nestled\\
+all snug in their beds;\\
+While visions of sugar-plums\\
+danced in their heads;\\
+And mamma in her 'kerchief,\\
+and I in my cap,\\
+Had just settled our brains\\
+for a long winter's nap,}{middle}
+
+%Stanza3
+\stanza[images/Stanza3.png]{When out on the lawn\\
+there arose such a clatter,\\
+I sprang from the bed\\
+to see what was the matter.\\
+Away to the window\\
+I flew like a flash,\\
+Tore open the shutters\\
+and threw up the sash.}{bottom}
+
+%Stanza4
+\stanza[images/Stanza4]{The moon on the breast\\
+of the new-fallen snow\\
+Gave the lustre of mid-day\\
+to objects below;\\
+When, what to my wondering eyes should appear,\\
+But a miniature sleigh,\\
+and eight tiny reindeer,}{top}
+
+%Stanza5 && 6
+\stanza{With a little old driver, so lively and quick,\\
+I knew in a moment it must be St.~Nick.\\
+More rapid than eagles his coursers they came,\\
+And he whistled, and shouted,\\
+and called them by name;\\
+“Now, Dasher! now, Dancer! now,\\
+Prancer and Vixen!\\
+On, Comet! on, Cupid! on,\\
+Donder and Blitzen!\\
+To the top of the porch!\\
+to the top of the wall!\\
+Now dash away! dash away!\\
+dash away all!”}{middle}
+
+%Stanza7
+\stanza{As dry leaves that before\\
+the wild hurricane fly,\\
+When they meet with an obstacle,\\
+mount to the sky;\\
+So up to the house-top\\
+the coursers they flew,\\
+With the sleigh full of Toys,\\
+and St.~Nicholas too.}{top}
+
+%Stanza8
+\stanza{And then, in a twinkling, I heard on the roof\\
+The prancing and pawing of each little hoof.\\
+As I drew in my head, and was turning around,\\
+Down the chimney St.~Nicholas came with a bound.}{middle}
+
+%Stanza9
+\stanza[images/Stanza9]{He was dressed all in fur,\\
+from his head to his foot,\\
+And his clothes were all tarnished\\
+with ashes and soot;\\
+A bundle of Toys\\
+he had flung on his back,\\
+And he look'd like a peddler\\
+just opening his pack.}{bottom}
+
+%Stanza10
+\stanza[images/Stanza10]{His eyes—how they twinkled!\\
+his dimples how merry!\\
+His cheeks were like roses,\\
+his nose like a cherry;\\
+His droll little mouth was\\
+drawn up like a bow,\\
+And the beard on his chin\\
+was as white as the snow;}{bottom}
+
+%Stanza11
+\stanza{The stump of a pipe he held\\
+tight in his teeth,\\
+And the smoke it encircled\\
+his head like a wreath;\\
+He had a broad face and a\\
+little round belly,\\
+That shook, when he laugh'd,\\
+like a bowl full of jelly.}{middle}
+
+%Stanza12 && 13
+\stanza{He was chubby and plump, a right jolly old elf,\\
+And I laugh'd when I saw him, in spite of myself;\\
+A wink of his eye and a twist of his head,\\
+Soon gave me to know I had nothing to dread;\\
+He spoke not a word,\\
+but went straight to his work,\\
+And fill'd all the stockings;\\
+then turn'd with a jerk,\\
+And laying his finger aside of his nose,\\
+And giving a nod,\\
+up the chimney he rose;}{middle}
+
+%Stanza14
+\stanza{He sprang to his sleigh,\\
+to his team gave a whistle,\\
+And away they all flew like the down of a thistle:\\
+But I heard him exclaim,\\
+ere he drove out of sight—\\
+“Happy Christmas to all; and to all a good night.”}{middle}
+
+% --- Optional colophon page ---
+\thispagestyle{empty}\mbox{}\newpage
+
+\end{document}

@@ -1,0 +1,61 @@
+% --- TITLE + COPYRIGHT PAGES ---
+% Place this file at: Frontmatter/titlepage.tex
+% Include it in main.tex after \frontmatter and before \tableofcontents
+
+\cleardoublepage
+\thispagestyle{empty}
+\begin{titlepage}
+  \centering
+  \vspace*{3em}
+
+  {\Huge\bfseries \BookTitle\par}
+  \vspace{0.5em}
+  {\Large \itshape \BookSubtitle\par}
+
+  \vspace{3em}
+  {\large \BookAuthor\par}
+
+  \vfill
+
+  % (Optional) publisher mark or logo could go here
+  % \includegraphics[width=0.9in]{frontmatter/publisher-mark.pdf}\par\vspace{1em}
+
+  {\PublisherName\par}
+  {\PublisherCity\par}
+
+  \vspace*{2em}
+\end{titlepage}
+
+% --- COPYRIGHT (verso of title page) ---
+\thispagestyle{empty}
+\vspace*{\fill}
+
+{
+%\small
+%\noindent \textcopyright\ \ThisEditionYear\ \BookAuthor. All rights reserved.
+
+\medskip
+\noindent \ISBN
+
+\medskip
+\noindent \EditionNote
+
+\medskip
+\noindent First published \OriginalPubYear. This edition \ThisEditionYear.
+
+\medskip
+\noindent Typeset in EB Garamond using XeLaTeX. Printed in the United States of America.
+
+%\medskip
+%\noindent No part of this publication may be reproduced, distributed, or transmitted in any form or by any means,
+%including photocopying, recording, or other electronic or mechanical methods, without the prior written
+%permission of the publisher, except in the case of brief quotations embodied in critical reviews and certain
+%other noncommercial uses permitted by copyright law.
+
+\medskip
+\noindent \PublisherName\\
+\PublisherCity
+}
+
+\vspace*{\fill}
+\cleardoublepage

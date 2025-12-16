@@ -1,0 +1,98 @@
+\documentclass[12pt,twoside]{book}
+
+\usepackage[
+  paperwidth=5.5in,
+  paperheight=8.5in,
+  inner=1in,
+  outer=0.75in,
+  top=0.85in,
+  bottom=0.85in,
+  includehead,
+  includefoot
+]{geometry}
+
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{microtype}
+\usepackage{setspace}
+\usepackage[english]{babel}
+\usepackage{graphicx}
+
+% -------------------------------
+% Custom chapter title: "Stave X Title"
+% -------------------------------
+\usepackage{titlesec}
+
+\titleformat{\chapter}
+  {\normalfont\Large\bfseries}  % font
+  {Stave\ \thechapter}         % label = “Stave X”
+  {1em}                        % spacing between label and title
+  {}                           % before-code
+  []                           % after-code
+
+% Optional: nicer paragraph spacing
+\setlength{\parskip}{0.4em}
+\setlength{\parindent}{1.2em}
+
+\title{A Christmas Carol}
+\author{Charles Dickens}
+\date{}
+
+\emergencystretch=1em
+
+\begin{document}
+\renewcommand{\chaptername}{Stave}
+
+\frontmatter
+\thispagestyle{empty}
+\noindent
+\makebox[\textwidth][c]{%
+    \includegraphics[
+        width=\paperwidth,
+        height=.55\paperheight,
+        keepaspectratio
+    ]{images/imgtp01.jpg}
+}
+\clearpage
+
+\thispagestyle{empty}
+\vspace*{\fill}
+\begin{center}
+    {\small
+    First published in 1843.\\[1em]
+    This edition published 2025\\
+    Text obtained from Project Gutenberg.\\[1em]
+    \texttt{https://www.gutenberg.org/ebooks/24022}\\[1em]
+    Edited, Typeset, and Bound by Arthur Strutzenberg.\\[1em]
+    }
+\end{center}
+\vspace*{\fill}
+\clearpage
+
+\tableofcontents
+\clearpage
+
+\mainmatter
+
+\newcommand{\plate}[2]{%
+    \thispagestyle{empty}%
+    \begin{center}
+        \includegraphics[
+            width=\paperwidth,
+            height=.35\paperheight,
+            keepaspectratio
+        ]{#1}\\
+        \vspace{0.5em}%
+        {\small\bfseries\itshape #2}%
+    \end{center}
+}
+
+% Each of these files lives in the "staves" folder.
+% Inside each stave file, start with \chapter{...}
+\input{staves/stave01}
+\input{staves/stave02}
+\input{staves/stave03}
+\input{staves/stave04}
+\input{staves/stave05}
+
+\end{document}

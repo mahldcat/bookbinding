@@ -1,4 +1,4 @@
-\documentclass[12pt,oneside]{book}
+\documentclass[11pt,oneside]{book}
 
 % Page size 5.5" x 8.5"
 %\usepackage[paperwidth=5.5in,paperheight=8.5in,margin=0.7in]{geometry}
@@ -6,6 +6,23 @@
   inner=0.7in, outer=0.7in,
   top=0.5in, bottom=0.5in,
   includehead, includefoot]{geometry}
+
+  %-------------HEADER-------------------------
+\usepackage{fancyhdr}
+\setlength{\headheight}{14pt} % avoid warnings
+\pagestyle{fancy}
+\fancyhf{} % clear defaults
+
+% Two–sided layout: page # on inner side, poem title on outer side
+\fancyhead[LE]{\thepage}
+\fancyhead[RO]{\thepage}
+\fancyhead[LO]{\nouppercase{\rightmark}} % recto (odd) outer: title
+\fancyhead[RE]{\nouppercase{\leftmark}}  % verso (even) outer: title
+
+% Make "plain" pages (like after \clearpage) look the same:
+\fancypagestyle{plain}{\fancyhf{}\fancyhead[LE]{\thepage}\fancyhead[RO]{\thepage}%
+\fancyhead[LO]{\nouppercase{\rightmark}}\fancyhead[RE]{\nouppercase{\leftmark}}}
+
 
 % Nice micro-typography and better line breaking
 \usepackage{microtype}
@@ -20,10 +37,13 @@
 \usepackage[T1]{fontenc}
 
 \newcommand{\poemhead}[1]{
-  \begin{center}
-    \Large\textsc{#1}
-  \end{center}
-  \vspace{1em}
+  \clearpage
+  \markboth{#1}{#1}% sets \leftmark and \rightmark to the poem title
+  %\begin{center}
+  %  {\fontsize{12}{14}\selectfont \scshape #1}
+  %\end{center}
+  %\vspace{1em}
+  \addcontentsline{toc}{chapter}{#1}%
 }
 
 
