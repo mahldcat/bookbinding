@@ -15,7 +15,7 @@ $regexSplit = '(?=\b\d{1,3}:\d{1,3}\b)'
 $regexLine = '^(?<chapter>\d+):(?<verse>\d+)\s+(?<text>.+)'
 
 
-Write-Output "\documentclass[twoside]{memoir}"
+Write-Output "\documentclass[9pt,twoside]{memoir}"
 Write-Output "\input{imports/kjb_layout}"
 Write-Output "\begin{document}"
 
