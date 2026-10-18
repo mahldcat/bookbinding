@@ -1,5 +1,6 @@
 % !TeX program = xelatex
-\documentclass[11pt,twoside]{book} % twoside = opposing margins
+% \documentclass[11pt,twoside]{book} % twoside = opposing margins
+\documentclass[11pt,twoside,openany]{book}
 % --- METADATA (put in preamble) ---
 \newcommand{\BookTitle}{An Easter Disciple:}
 \newcommand{\BookSubtitle}{The Chronicle of Quintus, the Roman Knight}
@@ -51,7 +52,7 @@ This edition \ThisEditionYear
 \usepackage[
   paperwidth=5.5in, paperheight=8.5in,
   top=0.75in, bottom=0.95in,
-  inner=1.0in, outer=0.7in % opposing margins for binding
+  inner=0.95in, outer=0.7in % opposing margins for binding
 ]{geometry}
 
 \usepackage{setspace}
@@ -63,9 +64,9 @@ This edition \ThisEditionYear
   {\normalfont\huge\bfseries}
   {\thechapter.} % or {} to suppress completely
   {0pt}
-  {\Huge}
+  {\huge}
 
-\titlespacing*{\chapter}{0pt}{-0.4in}{18pt}
+\titlespacing*{\chapter}{0pt}{-0.3in}{15pt}
 
 \usepackage{fancyhdr}
 \setlength{\headheight}{14pt}
