@@ -1,0 +1,61 @@
+% !TeX program = xelatex
+\documentclass{article}
+
+% ------------------------------------------------------------
+% PAGE SETUP
+% One physical sheet: 11" wide x 8.5" high
+% Folded vertically into two 5.5" x 8.5" pages
+% ------------------------------------------------------------
+
+\usepackage[
+    paperwidth=11in,
+    paperheight=8.5in,
+    margin=0in
+]{geometry}
+
+\usepackage{graphicx}
+\usepackage{fontspec}
+
+\setmainfont{EB Garamond}
+
+% No headers, footers, or page numbers
+\pagestyle{empty}
+
+% Remove normal paragraph indentation / spacing from layout
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{0pt}
+
+\begin{document}
+
+% ============================================================
+% OUTSIDE OF PAMPHLET
+%
+% LEFT PANEL  = back cover
+% RIGHT PANEL = front cover
+%
+% When folded:
+%
+%        BACK COVER | FRONT COVER
+%        5.5 x 8.5  | 5.5 x 8.5
+%
+% ============================================================
+
+\noindent
+%
+% ---------------- BACK COVER ----------------
+%
+\begin{minipage}[t][8.5in][t]{5.5in}
+    % Leave blank for now
+    \mbox{}
+\end{minipage}%
+%
+% ---------------- FRONT COVER ----------------
+%
+\begin{minipage}[t][8.5in][t]{5.5in}
+    \includegraphics[
+        width=5.5in,
+        height=8.5in
+    ]{CoverArt/Easter_Disciple_CoverTransparent.png}
+\end{minipage}
+
+\end{document}
