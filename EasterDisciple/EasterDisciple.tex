@@ -1,0 +1,121 @@
+% !TeX program = xelatex
+\documentclass[11pt,twoside]{book} % twoside = opposing margins
+% --- METADATA (put in preamble) ---
+\newcommand{\BookTitle}{An Easter Disciple:}
+\newcommand{\BookSubtitle}{The Chronicle of Quintus, the Roman Knight}
+\newcommand{\BookAuthor}{Arthur Benton Sanford}
+\newcommand{\PublisherName}{Fly By Night Publishing}
+\newcommand{\PublisherCity}{Queen Creek, AZ}
+\newcommand{\EditionNote}{Text sourced from Project Gutenberg. This edition has been reformatted and lightly edited for clarity and modern typographic conventions.}
+\newcommand{\OriginalPubYear}{1922}   % original publication date (if reprint)
+\newcommand{\ThisEditionYear}{2027}   % current edition date
+
+% end metadata
+
+
+\newcommand{\BookTitlePage}{%
+\thispagestyle{empty}
+
+\vspace*{2cm}
+
+\begin{center}
+
+{\Huge\bfseries \BookTitle \par}
+\vspace{0.5em}
+
+{\Large\itshape \BookSubtitle \par}
+
+\vspace{2.5cm}
+
+{\Large \BookAuthor \par}
+
+\vfill
+
+{\small
+\PublisherCity \par
+\PublisherName \par
+\vspace{1em}
+Originally published \OriginalPubYear \par
+This edition \ThisEditionYear
+}
+
+\end{center}
+
+\clearpage
+}
+
+
+\usepackage{fontspec}
+\setmainfont{EB Garamond}
+
+\usepackage[
+  paperwidth=5.5in, paperheight=8.5in,
+  top=0.75in, bottom=0.95in,
+  inner=1.0in, outer=0.7in % opposing margins for binding
+]{geometry}
+
+\usepackage{setspace}
+\setstretch{1.25}
+\usepackage{microtype}
+
+\usepackage{titlesec}
+\titleformat{\chapter}[display]
+  {\normalfont\huge\bfseries}
+  {\thechapter.} % or {} to suppress completely
+  {0pt}
+  {\Huge}
+
+\titlespacing*{\chapter}{0pt}{-0.4in}{18pt}
+
+\usepackage{fancyhdr}
+\setlength{\headheight}{14pt}
+\pagestyle{fancy}
+\fancyhf{}
+%\fancyhead[LE,RO]{\thepage} % page numbers: Left Even, Right Odd
+%\fancyhead[RE]{\leftmark}   % chapter title on even pages
+%\fancyhead[LO]{\rightmark}  % section title on odd pages
+\fancyhead[LE,RO]{} % page numbers: Left Even, Right Odd
+\fancyhead[RE]{}   % chapter title on even pages
+\fancyhead[LO]{}  % section title on odd pages
+\renewcommand{\headrulewidth}{0pt} % no top line
+\renewcommand{\contentsname}{My Custom Title}
+
+\begin{document}
+
+\frontmatter
+\BookTitlePage
+
+\clearpage
+\thispagestyle{empty}
+\vspace*{\fill}
+
+\begin{center}
+\small
+\EditionNote
+\end{center}
+
+\clearpage
+
+\mainmatter
+
+\include{Chapters/chapterFW}
+\include{Chapters/chapter01}
+\include{Chapters/chapter02}
+\include{Chapters/chapter03}
+\include{Chapters/chapter04}
+\include{Chapters/chapter05}
+\include{Chapters/chapter06}
+\backmatter
+\chapter*{Afterword}
+
+\indent Easter is, above all, a celebration of hope. The story of Christ does not end upon the Cross or in the silence of a sealed tomb. On the third day the stone was rolled away, the tomb was found empty, and sorrow gave way to the words that have echoed through the centuries: He is risen. An Easter Disciple, first published in 1922, seemed a fitting little work to reprint for the season. Through the story of Quintus, Arthur Benton Sanford looks upon the events surrounding the Crucifixion and Resurrection through the eyes of one who must encounter them for himself. Though his story is fiction, the truth at its heart is the foundation of Easter: Christ was crucified, Christ died, and Christ rose again.\\
+
+\indent This edition was reprinted and hand-bound as part of my bookbinding hobby and as a small Easter gift for friends and family. There is a quiet pleasure in taking an old text, setting it once more upon the printed page, folding and sewing its gatherings, and giving new physical form to words written more than a century ago. I offer this little volume in that same spirit—as a remembrance of Easter and of the hope proclaimed by the empty tomb. The paper will age, the thread may loosen, and the binding will bear the marks of the hands that hold it; but the message it carries remains: \textbf{He is risen indeed.}
+
+\vspace{1.25em}
+
+\noindent
+--- Arthur M. Strutzenberg\\
+Easter, 2027
+
+\end{document}
